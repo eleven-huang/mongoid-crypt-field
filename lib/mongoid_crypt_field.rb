@@ -1,5 +1,4 @@
-module Mongoid
-  module CryptField
+module MongoidCryptField
 
     def crypt_field(field_name)
 
@@ -9,10 +8,11 @@ module Mongoid
       field_str = field_name.to_s
       salt_sym = "#{str}_salt".to_sym
 
-      self[salt_sym] = self.object_id.to_s + rand.to_s
-
       field field_sym
       field salt_sym
+
+      self[salt_sym] = self.object_id.to_s + rand.to_s
+
 
       define_method("#{field_str}_equal_to".to_sym)  |value| do
         if Digest::SHA2.hexdigest(value + "mongoid crypt field" + self[salt_sym]) == self[field_sym]
@@ -26,5 +26,4 @@ module Mongoid
         self[ecypt_field] = Digest::SHA2.hexdigest(new_value + "mongoid crypt field" + self[salt_sym])
       end
     end
-  end
 end
