@@ -1,20 +1,30 @@
-module MongoidCryptField
-  include Mongoid::Document
+module Mongoid
+  module CryptField
 
-  def crypt_field(field_name, salt)
+    def crypt_field(field_name)
 
-    raise "salt must be set" if salt.blank?
+      raise "field name can not be empty" if field_name.blank?
 
-    ecypt_field = "ecypt_#{field_name}".to_sym
+      field_sym = field_name.to_sym
+      field_str = field_name.to_s
+      salt_sym = "#{str}_salt".to_sym
 
-    field ecypt_field
+      self[salt_sym] = self.object_id.to_s + rand.to_s
 
-    define_method("#{field_name}_equal".to_sym)  |value| do
+      field field_sym
+      field salt_sym
 
-    end
+      define_method("#{field_str}_equal_to".to_sym)  |value| do
+        if Digest::SHA2.hexdigest(value + "mongoid crypt field" + self[salt_sym]) == self[field_sym]
+          return true
+        else
+          return false
+        end
+      end
 
-    define_method(field_name.to_sym) |new_value| do
-      self[ecypt_field] = Digest::SHA2.hexdigest(new_value + "mongoid crypt field" + salt)
+      define_method(sym) |new_value| do
+        self[ecypt_field] = Digest::SHA2.hexdigest(new_value + "mongoid crypt field" + self[salt_sym])
+      end
     end
   end
 end
