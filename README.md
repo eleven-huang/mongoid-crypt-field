@@ -26,3 +26,8 @@ Add ecrypt field to mongoid document
 A field named "field name"_salt(:password_salt) will automatic add to your document
 
 
+##Install
+
+        gem install mongoid_crypt_field
+
+
