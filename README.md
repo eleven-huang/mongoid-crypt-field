@@ -21,3 +21,8 @@ Add ecrypt field for mongoid document
         end
 
 
+##Notice
+
+    A field named "field name"_salt(:password_salt) will automatic add to your document
+
+
