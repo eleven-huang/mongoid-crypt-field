@@ -1,5 +1,5 @@
 #mongoid-crypt-field
-Add ecrypt field for mongoid document
+Add ecrypt field to mongoid document
 
 ##How to User
 
@@ -23,6 +23,6 @@ Add ecrypt field for mongoid document
 
 ##Notice
 
-    A field named "field name"_salt(:password_salt) will automatic add to your document
+A field named "field name"_salt(:password_salt) will automatic add to your document
 
 
