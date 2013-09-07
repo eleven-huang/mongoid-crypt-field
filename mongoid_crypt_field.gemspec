@@ -7,11 +7,11 @@ require "mongoid_crypt_field/version"
 Gem::Specification.new do |s|
   s.name        = "mongoid_crypt_field"
   s.version     = MongoidCryptField::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of MongoidCryptField."
-  s.description = "TODO: Description of MongoidCryptField."
+  s.authors     = ["eleven huang"]
+  s.email       = ["11.eleven.huang@gmail.com"]
+  s.homepage    = "https://github.com/eleven-huang/mongoid-crypt-field"
+  s.summary     = "mongoid crypt field"
+  s.description = "mongoid crypt field"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
