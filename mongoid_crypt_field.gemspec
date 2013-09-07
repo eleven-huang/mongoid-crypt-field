@@ -10,8 +10,8 @@ Gem::Specification.new do |s|
   s.authors     = ["eleven huang"]
   s.email       = ["11.eleven.huang@gmail.com"]
   s.homepage    = "https://github.com/eleven-huang/mongoid-crypt-field"
-  s.summary     = "mongoid crypt field"
-  s.description = "mongoid crypt field"
+  s.summary     = "Add crypt field for mongoid document"
+  s.description = "Add crypt field for mongoid document"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
