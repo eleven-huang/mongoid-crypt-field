@@ -11,7 +11,7 @@ require "rspec"
 Dir[ File.join(MODELS, "*.rb") ].sort.each do |file|
   name = File.basename(file, ".rb")
   #autoload name.camelize.to_sym, name
-  autoload :User, name
+  autoload name.camelize.to_sym, name
 end
 
 
