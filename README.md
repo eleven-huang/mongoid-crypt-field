@@ -1,7 +1,7 @@
 #mongoid-crypt-field
 Add ecrypt field to mongoid document
 
-##How to User
+##How to use
 
 ###init
 
