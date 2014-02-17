@@ -1,5 +1,5 @@
 #mongoid-crypt-field
-Add ecrypt field to mongoid document
+Add encrypted field for mongoid document
 
 ##How it work
 
